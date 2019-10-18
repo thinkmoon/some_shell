@@ -37,6 +37,8 @@ source /etc/os-release
 
 #从VERSION中提取发行版系统的英文名称，为了在debian/ubuntu下添加相对应的Nginx apt源
 VERSION=`echo ${VERSION} | awk -F "[()]" '{print $2}'`
+echo "启动v2ray：systemctl start v2ray"
+echo "启动nginx：systemctl start nginx"
 
 check_system(){
     if [[ "${ID}" == "centos" && ${VERSION_ID} -ge 7 ]];then
